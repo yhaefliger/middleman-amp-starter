@@ -1,8 +1,6 @@
 var gulp = require('gulp-help')(require('gulp')),
   postcss = require('gulp-postcss'),
-  browserSync = require('browser-sync').create(),
-  wait = require('gulp-wait')
-  
+  browserSync = require('browser-sync').create();  
 
 var
   dest         = '.tmp/',   // The "hot" build folder used by Middleman's external pipeline
