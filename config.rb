@@ -20,12 +20,10 @@ page '/*.txt', layout: false
 set :css_dir, "css"
 
 # plugins
-activate :dato
 activate :directory_indexes
-activate :livereload, apply_css_live: false
 activate :external_pipeline,
   name: :gulp,
-  command: build? ? 'gulp build':'gulp watch',
+  command: build? ? 'gulp build':'gulp serve',
   source: '.tmp',
   latency: 1
 

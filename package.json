@@ -1,8 +1,9 @@
 {
-  "name": "sara",
+  "name": "middleman-amp-starter",
   "version": "1.0.0",
   "devDependencies": {
     "autoprefixer": "^6.7.6",
+    "browser-sync": "^2.18.8",
     "cssbeautify": "^0.3.1",
     "cssnano": "^3.8.1",
     "gulp": "^3.9.1",
@@ -10,6 +11,7 @@
     "gulp-postcss": "^6.2.0",
     "gulp-replace": "^0.5.4",
     "gulp-util": "3.0.8",
+    "gulp-wait": "file:gulp-wait",
     "path": "^0.12.7",
     "postcss": "5.0.14",
     "postcss-calc": "^5.3.1",

@@ -13,11 +13,33 @@ title: Welcome to Middleman
 </svg>
 
 <h1>
-  Middleman is Running
+  AMP Middleman with Basscss is Running
 </h1>
+<p class="bold">
+  <%= link_to(
+    "Github Project",
+    "https://github.com/NeedBrainz/middleman-amp-starter",
+    target: "_blank"
+  ) %>
+</p>
+<ul class="list-reset">
 
-<%= link_to(
-  "Read Documentation",
-  "https://middlemanapp.com/basics/templating_language/",
-  target: "_blank"
-) %>
+  <li>
+    <%= link_to(
+      "Read Middleman Documentation",
+      "https://middlemanapp.com/basics/templating_language/",
+      target: "_blank"
+    ) %>
+  </li>
+  <li>
+    <%= link_to(
+      "AMP Start Project",
+      "https://github.com/ampproject/ampstart",
+      target: "_blank"
+    ) %> - <%= link_to(
+      "Basscss",
+      "http://basscss.com/",
+      target: "_blank"
+    ) %>
+  </li>
+</ul>
