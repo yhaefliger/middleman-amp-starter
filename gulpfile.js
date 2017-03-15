@@ -1,6 +1,6 @@
 var gulp = require('gulp-help')(require('gulp')),
   postcss = require('gulp-postcss'),
-  browserSync = require('browser-sync').create();  
+  browserSync = require('browser-sync').create();
 
 var
   dest         = '.tmp/',   // The "hot" build folder used by Middleman's external pipeline
@@ -36,13 +36,10 @@ gulp.task('css-watch', ['postcss'], function(done){
 gulp.task('serve', ['postcss'], function() {
 
     browserSync.init({
-        proxy: "http://localhost:4567"
+        proxy: "http://localhost:4567",
+        reloadDelay: 1500
     });
 
     gulp.watch(css_source, ['css-watch']);
-    gulp.watch("source/**/*.{erb,html,haml}", function (e) {
-		setTimeout(function () {
-			browserSync.reload();
-		}, 1500);
-    });
+    gulp.watch("source/**/*.{erb,html,haml}", function (e) { browserSync.reload(); });
 });

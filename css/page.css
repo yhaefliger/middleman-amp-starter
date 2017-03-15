@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-@import '../../core';
+@import '../ampstart/css/core';
 @import 'page-vars';
 
 body {
@@ -30,6 +30,5 @@ a:focus,a:hover {
 }
 
 .middleman-logo {
-  margin-bottom: 1rem;
   width: 10rem;
 }
