@@ -1,3 +1,4 @@
+require 'redcarpet'
 ###
 # Page options, layouts, aliases and proxies
 ###
@@ -18,8 +19,15 @@ page '/*.txt', layout: false
 
 # General configuration
 set :css_dir, "css"
+set :markdown_engine, :redcarpet
+set :markdown, fenced_code_blocks: true, smartypants: true, with_toc_data: true
 
 # plugins
+activate :dato
+
+# tell Middleman to ignore the template
+ignore "/templates/*"
+
 activate :directory_indexes
 activate :external_pipeline,
   name: :gulp,
@@ -42,6 +50,22 @@ helpers do
       options[:selected] = ""
     end
     link_to *args, options
+  end
+  def css_active_link_to(*args)
+    options = args.extract_options!
+    if url_for(current_page.url) == url_for(args.last)
+      options[:class] += " active"
+    end
+    link_to *args, options
+  end
+  def markdown(text)
+    Redcarpet::Markdown.new(
+      Redcarpet::Render::HTML.new(hard_wrap: true,),
+      tables: true,
+      fenced_code_blocks: true,
+      lax_spacing: true,
+      underline: true,
+    ).render(text)
   end
 end
 
